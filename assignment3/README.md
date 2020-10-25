@@ -95,6 +95,6 @@ int recursive(int x) {
 ```
 input a: 1
 input b: 2
-ans: lans: 3
+ans: 1ans: 3
 -- program is finished running --
 ```
