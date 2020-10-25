@@ -86,7 +86,7 @@ int recursive(int x) {
 ```
 * P.S. 
   * a, b, c, d are stored in $s0, $s1, $s2, $s3 respectively.
-  *And you must use the procedure (function) call to implement function and
+  * And you must use the procedure (function) call to implement function and
   recursive.
   * Also, your program should terminal normally (the output should show “-- program is
   finished running --“).
