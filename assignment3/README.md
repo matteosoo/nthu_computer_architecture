@@ -53,8 +53,7 @@ result = 0
 ```C
 #include "stdio.h"
 
-int
-function (int x, int y);
+int function (int x, int y);
 int recursive(int x);
 int main() {
   int a = 0;
@@ -71,8 +70,7 @@ int main() {
   printf("ans: %d", d);
   return 0;
 }
-int
-function (int x, int y) {
+int function (int x, int y) {
   if (x <= 0)
     return 1;
   else if (y <= 0)
@@ -83,6 +81,7 @@ function (int x, int y) {
 int recursive(int x) {
     return (x >= 0xFF) ? (recursive(x - 3) + recursive(x - 2)) :
       ((x >= 0xF) ? recursive(x - 1) + 1 : 1);
+}
 ```
 * P.S. 
   * a, b, c, d are stored in $s0, $s1, $s2, $s3 respectively.
