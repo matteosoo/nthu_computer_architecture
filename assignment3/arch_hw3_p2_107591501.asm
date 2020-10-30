@@ -90,10 +90,11 @@ if_1:
   	addi $a0, $a0, -2   	# x = x-2
      	jal, _Recursive
      	lw $a0, 4($sp)     	# restore the $a0 (x)
-     	move $s2, $v0 		# s1 = recursive(x-2)
+     	move $s2, $v0 		# s2 = recursive(x-2)
       
      	add $v0, $zero, $s1 	# v0 = s1 (recursive(x-3))
      	add $v0, $v0, $s2	# v0 += s2 (recursive(x-2))
+     	j, _End_recursive
      	
 if_2:     
   	addi $a0, $a0, -1   	# x = x-1
