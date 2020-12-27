@@ -17,16 +17,19 @@ Final Project - Report
 ## Demo (How to run)
 1. Environments
     * c++ compile with g++
-    * c++11 standard
     * The nthucad server will be used as the demonstration platform. (ssh://nthucad.cs.nthu.edu.tw `port 22`)
+    * Login to ic21 : `$ ssh -X ic21` for getting gcc permission
 2. Compile
-    * `$ g++ project.cpp -std=c++11 -o project`
-3. Execution
-    * `$ ./project cache1.org reference1.lst index.rpt`
-    * project is your binary code
-    * cache1.org, reference1.lst are input files
-    * index.rpt is the output file name. 
-    * (The input files are ASCII format.)
+    * `$ g++44 project.cpp -std=c++0x -o project`
+3. Execute
+    * `$ ./project config/cache1.org bench/reference1.lst index.rpt`
+    * `project` is your binary code.
+    * `cache1.org`, `reference1.lst` are input files.
+    * `index.rpt` is the output file name. 
+    * Those input files are ASCII format.
+4. Verify
+    * `$ ./verify config/cache1.org bench/reference1.lst index.rpt`
+    * `$ cat index.rpt` could check the report on terminal.
 
 
 ###### tags: `computer architecture`
