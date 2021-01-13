@@ -118,7 +118,8 @@ int main(int argc, char* argv[])
     int indexing_bits[64] = {0}; // since the address_bits will not longer than 64
     int tag_bits = address_bits - offset_bits - indexing_bit_count;
 
-    for(int i = offset_bits, j = 0; j < indexing_bit_count; ++i, ++j){
+    // choose the least significant bits (LSBs) of block address (skipping offset bits) to decide the cache set.
+    for(int i = offset_bits, j = 0; j < indexing_bit_count; i++, j++){
          indexing_bits[j] = i;
     }
     // std::cout << "address_bits: " << address_bits << endl;
@@ -164,7 +165,7 @@ int main(int argc, char* argv[])
     file_out << "Offset bit count: " << offset_bits << endl;
     file_out << "Indexing bit count: " << indexing_bit_count << endl;
     file_out << "Indexing bits:";
-    for(int i = indexing_bit_count - 1; i >= 0; --i){
+    for(int i = indexing_bit_count - 1; i >= 0; i--){
         file_out << " " << indexing_bits[i];
     }
     file_out << endl;
