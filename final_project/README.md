@@ -43,7 +43,7 @@ project將以C++模擬cache機制，首先也先理解LRU和NRU差異。
             * 2.2.4.1 $if$ found '1', $then$ replace block and set nru-bit to '0'
             * 2.2.4.2 $if$ NOT found '1', $then$ set all nru-bits to '1' 並 replace the first block and set the first nru-bit to '0'
     * 2.3 return `total_miss_count`
-* 3. main 將結果整理成 index.rpt 輸出
+* 3. main 將結果寫入 index.rpt 輸出
 
 ## Description of data structure
 在此簡單分成2個function，其一是main function 作為I/O用，其二是cache_miss function 作為計算cache miss 次數用。
@@ -125,6 +125,7 @@ cache_miss function使用了幾個integer變數在以下分別一一說明
 4. Verify
     * `$ ./verify config/cache1.org bench/reference1.lst index.rpt`
     * `$ cat index.rpt` could check the report on terminal.
+* Note: `project_advance.cpp` has some bugs not been fixed yet.
 
 
 ###### tags: `computer architecture`
